@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 //Children is Button 
-//What we created Rows Seperate
+//No Nested View
 
 
 
