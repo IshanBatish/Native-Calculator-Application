@@ -1,16 +1,31 @@
 import React, { Component, useState  } from 'react';
 import { Text, View, Image, Button, TextInput } from 'react-native';
 
+const UpdateText = (props) => {
+  const [text, updateText] = React.useState('InitialState'); 
+  const [textInput,onTextChange] = React.useState('');
+  return (
+    <View>
+      <Text style={{alignItems: 'center'}}>{text}</Text>
+      <TextInput 
+      style={{width:16,height:16,borderWidth:1,padding:50}}
+      placeholder={"My Lyf, My Rules"}
+      onChangeText={val => 
+        onTextChange(val)}
+      value={textInput}
+      
+      />
+      <Button 
+      onPress={() => updateText(TextInput)}
+      title={"Do it"} />
+
+    </View>)};
+
 const YourApp = () => {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>Jatta No Stress</Text>
-
-
-
-
-
-
+      <UpdateText />
 
 
 
