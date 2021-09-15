@@ -37,11 +37,17 @@ export default class App extends React.Component{
     render(){
         return (
             <View style={styles.container}>
+
+{/* StatusBar is Operating System Bar     */}
                 <StatusBar barStyle="light-content" />
+                
+{/* Display content in a safe area view that will be working with all devices             */}
                 <SafeAreaView>
                     <Text style={styles.value}>
                         {parseFloat(this.state.currentValue).toLocaleString()}
                     </Text>
+                    
+            {/* FirstRow */}
                     <Row>
                         <Button 
                             text="C"
@@ -64,6 +70,8 @@ export default class App extends React.Component{
                             onPress={() => this.handleTop("operator", "/")}
                             />
                     </Row>
+                    
+            {/* SecondRow */}
                     <Row>
                         <Button text="7" onPress={() => this.handleTop("number", 7)} />
                         <Button text="8" onPress={() => this.handleTop("number", 8)} />
@@ -74,6 +82,8 @@ export default class App extends React.Component{
                                 onPress={() => this.handleTop("operator", "*")}
                         />
                     </Row>
+                    
+            {/* ThirdRow */}
                     <Row>
                         <Button text="4" onPress={() => this.handleTop("number", 7)} />
                         <Button text="5" onPress={() => this.handleTop("number", 8)} />
@@ -84,6 +94,8 @@ export default class App extends React.Component{
                                 onPress={() => this.handleTop("operator", "-")}
                         />
                     </Row>
+                    
+            {/* FourthRow */}
                     <Row>
                         <Button text="1" onPress={() => this.handleTop("number", 7)} />
                         <Button text="2" onPress={() => this.handleTop("number", 8)} />
@@ -94,6 +106,8 @@ export default class App extends React.Component{
                                 onPress={() => this.handleTop("operator", "+")}
                         />
                     </Row>
+
+            {/* LastRow */}
                     <Row>
                         <Button 
                             text="0"
@@ -102,13 +116,15 @@ export default class App extends React.Component{
                         />
                         <Button 
                             text="."  
-                            onPress={() => this.handleTop("number", ".")} />
+                            onPress={() => this.handleTop("number", ".")} /> 
                         <Button
                             text="="
                             theme="accent"
                             onPress={() => this.handleTop("equal")}
                         />
                     </Row>
+
+                    
                 </SafeAreaView>
             </View>
         );
