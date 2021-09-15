@@ -6,12 +6,17 @@ import Row from "./components/Row";
 import Button from "./components/Button";
 import calculator, { initialState } from "./util/calculator";
 
+
+//Styling for Screen
 const styles = StyleSheet.create({
+//Best practice to have a Container
     container: {
         flex:1,
         backgroundColor: "#202020",
         justifyContent: "flex-end"
     },
+//Value will be Displayed on StatusBar 
+
     value:{
         color: "#fff",
         fontSize: 40,
@@ -22,8 +27,9 @@ const styles = StyleSheet.create({
 });
 
 export default class App extends React.Component{
+//Finding this
     state = initialState;
-
+//Understanding this handleTop
     handleTop = (type, value) => {
         this.setState(state => calculator(type,value,state));
     };
@@ -59,33 +65,33 @@ export default class App extends React.Component{
                             />
                     </Row>
                     <Row>
-                        <Button text="7" onPress={() => this.handleTap("number", 7)} />
-                        <Button text="8" onPress={() => this.handleTap("number", 8)} />
-                        <Button text="9" onPress={() => this.handleTap("number", 9)} />
+                        <Button text="7" onPress={() => this.handleTop("number", 7)} />
+                        <Button text="8" onPress={() => this.handleTop("number", 8)} />
+                        <Button text="9" onPress={() => this.handleTop("number", 9)} />
                         <Button
                                 text="x"
                                 theme="accent"
-                                onPress={() => this.handleTap("operator", "*")}
+                                onPress={() => this.handleTop("operator", "*")}
                         />
                     </Row>
                     <Row>
-                        <Button text="4" onPress={() => this.handleTap("number", 7)} />
-                        <Button text="5" onPress={() => this.handleTap("number", 8)} />
-                        <Button text="6" onPress={() => this.handleTap("number", 9)} />
+                        <Button text="4" onPress={() => this.handleTop("number", 7)} />
+                        <Button text="5" onPress={() => this.handleTop("number", 8)} />
+                        <Button text="6" onPress={() => this.handleTop("number", 9)} />
                         <Button
                                 text="-"
                                 theme="accent"
-                                onPress={() => this.handleTap("operator", "-")}
+                                onPress={() => this.handleTop("operator", "-")}
                         />
                     </Row>
                     <Row>
-                        <Button text="1" onPress={() => this.handleTap("number", 7)} />
-                        <Button text="2" onPress={() => this.handleTap("number", 8)} />
-                        <Button text="3" onPress={() => this.handleTap("number", 9)} />
+                        <Button text="1" onPress={() => this.handleTop("number", 7)} />
+                        <Button text="2" onPress={() => this.handleTop("number", 8)} />
+                        <Button text="3" onPress={() => this.handleTop("number", 9)} />
                         <Button
                                 text="+"
                                 theme="accent"
-                                onPress={() => this.handleTap("operator", "+")}
+                                onPress={() => this.handleTop("operator", "+")}
                         />
                     </Row>
                     <Row>
@@ -96,15 +102,14 @@ export default class App extends React.Component{
                         />
                         <Button 
                             text="."  
-                            onPress={() => this.handleTap("number", ".")} />
+                            onPress={() => this.handleTop("number", ".")} />
                         <Button
                             text="="
                             theme="accent"
-                            onPress={() => this.handleTap("equal")}
+                            onPress={() => this.handleTop("equal")}
                         />
                     </Row>
                 </SafeAreaView>
-
             </View>
         );
     }
